@@ -2,6 +2,9 @@
 {% block title %}
     Product {{ product.title }}
 {% endblock %}
+{% block menu %}
+    <a class="nav-link" href="{% url 'add_product' %}">Add product</a>
+{% endblock %}
 {% block content %}
     <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
@@ -15,8 +18,8 @@
                     <h5 class="card-title">Price: {{ product.price }}₸</h5>
                     <p class="card-text">Description: {{ product.description }}</p>
                     <p class="card-text">Amount: {{ product.amount }}</p>
-                    <a href="#" class="btn btn-secondary">Edit</a>
-                    <a href="#" class="btn btn-secondary">Delete</a>
+                    <a href="{% url 'product_edit' product.pk %}" class="btn btn-secondary">Edit</a>
+                    <a href="{% url 'product_delete' product.pk %}" class="btn btn-secondary">Delete</a>
                 </div>
             </div>
         </div>

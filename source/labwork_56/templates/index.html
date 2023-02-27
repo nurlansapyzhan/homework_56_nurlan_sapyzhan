@@ -2,6 +2,9 @@
 {% block title %}
     Main
 {% endblock %}
+{% block menu %}
+    <a class="nav-link" href="{% url 'add_product' %}">Add product</a>
+{% endblock %}
 {% block content %}
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for product in products %}
